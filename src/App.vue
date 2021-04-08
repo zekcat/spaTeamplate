@@ -4,9 +4,9 @@
   <about-us></about-us>
   <services-component></services-component>
   <latest-work></latest-work>
-  <section></section>
-  <section></section>
-  <footer></footer>
+  <the-team></the-team>
+  <testimonial></testimonial>
+  <footer-section></footer-section>
 </div>
 </template>
 
@@ -15,6 +15,9 @@ import HeaderComponent from './components/HeaderComponent.vue';
 import AboutUs from './components/AboutUs.vue';
 import ServicesComponent from './components/ServicesComponent.vue';
 import LatestWork from './components/LatestWork.vue';
+import TheTeam from './components/TheTeam.vue';
+import Testimonial from './components/Testimonial.vue';
+import FooterSection from './components/FooterSection.vue';
 
 export default {
   name: 'App',
@@ -23,8 +26,12 @@ export default {
     AboutUs,
     ServicesComponent,
     LatestWork,
+    TheTeam,
+    Testimonial,
+    FooterSection,
   },
 };
+
 </script>
 
 <style lang="scss">

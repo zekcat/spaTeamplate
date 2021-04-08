@@ -12,11 +12,11 @@
     </div>
 
     <card-teamplate
-      :image="catImage"
+      :image="cameraImage"
       class="latest-work__image_first image"
     ></card-teamplate>
     <card-teamplate
-      :image="cameraImage"
+      :image="catImage"
       class="latest-work__image_second image"
     ></card-teamplate>
     <card-teamplate
@@ -51,29 +51,38 @@ export default {
 <style lang="scss" scoped>
 .latest-work {
   position: relative;
+  height: 1989px;
   // .latest-work__content
   &__content {
     position: absolute;
+    top: 204px;
+    left: 315px;
   }
 
   // .latest-work__image
   &__image {
-    position: absolute;
-    // .latest-work__image_first
 
     &_first {
+      top: 159px;
+      right: 313px;
     }
 
     // .latest-work__image_second
     &_second {
+      top: 519px;
+      left: 308px;
     }
 
     // .latest-work__image_third
     &_third {
+      top: 893px;
+      right: 307px;
     }
 
     // .latest-work__image_four
     &_four {
+      top: 1253px;
+      left: 316px;
     }
   }
 }
@@ -96,7 +105,7 @@ export default {
       display: block;
       content: "";
 
-      margin: 20px 0 0 0;
+      margin: 13px 0 0 0;
       width: 45px;
       border-bottom: 2px solid #252525;
     }
@@ -110,7 +119,7 @@ export default {
   display: flex;
 
   &__link {
-    margin: 0 20px;
+    margin: 0 40px 0 0;
 
     font-family: Open Sans;
     font-style: normal;
@@ -133,5 +142,6 @@ export default {
   }
 }
 .image {
+  position: absolute;
 }
 </style>
