@@ -12,9 +12,16 @@
           (359) 0 123 456 789 - info@yourmail.com
         </div>
         <div class="social-network__wrap">
-          <a href="#" class="social-network__link_facebook"></a>
-          <a href="#" class="social-network__link_twitter"></a>
-          <a href="#" class="social-network__link_pinterest"></a>
+          <a href="#" class="social-network__link social-network__link_facebook"
+            ></a
+          >
+          <a href="#" class="social-network__link social-network__link_twitter"
+            ></a
+          >
+          <a
+            href="#"
+            class="social-network__link social-network__link_pinterest"
+          ></a>
         </div>
       </div>
     </div>
@@ -70,6 +77,7 @@ export default {
 
   // .footer__social-network
   &__social-network {
+    width: 100%;
   }
 
   // .footer__copyright
@@ -88,38 +96,74 @@ export default {
 
     mix-blend-mode: normal;
     opacity: 0.5;
+
+    margin: 21px 0 21px;
   }
 }
 .social-network {
   background: #2e2e2e;
-  // .social-network__wrap
-  &__wrap {
-  }
 
   // .social-network__region
   &__region {
+    margin: 142px 0 10px 0;
+
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+
+    line-height: 19px;
+    letter-spacing: 0.832px;
+
+    color: #FFFFFF;
+    opacity: 0.5;
   }
 
   // .social-network__adress
   &__adress {
+    margin: 0 0 39px 0;
+
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+
+    line-height: 19px;
+    letter-spacing: 0.832px;
+
+    color: #FFFFFF;
+    opacity: 0.5;
   }
 
   // .social-network__link
   &__link {
+    width: 32px;
+    height: 32px;
+
+    margin: 0 10.5px 82px;
+
     // .social-network__link_facebook
     &_facebook {
-        background: url("/mail.svg");
-        background-repeat: no-repeat;
+      display: inline-block;
+
+      background: url("/facebook.svg");
+      background-repeat: no-repeat;
     }
 
     // .social-network__link_twitter
     &_twitter {
-        background: url("/twitter.svg");
-        background-repeat: no-repeat;
+      display: inline-block;
+
+      background: url("/twitter.svg");
+      background-repeat: no-repeat;
     }
 
     // .social-network__link_pinterest
     &_pinterest {
+      display: inline-block;
+
+      background: url("/pinterest-logo.svg");
+      background-repeat: no-repeat;
     }
   }
 }

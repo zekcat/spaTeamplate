@@ -12,15 +12,18 @@
         <a href="#" class="menu__link">blog</a>
         <a href="#" class="menu__link">contact</a>
       </nav>
+
       <div class="header__headline headline">
         <span>WHERE GREAT IDEAS COME TO LIFE</span>
       </div>
+
       <div class="header__subtitle">
         <span class="subtitle"
           >Passionate creative studio helping startups grow their
           business!</span
         >
       </div>
+
       <!-- TO DO slider component -->
       <div class="header__slide-control">
         <a href="#">01</a>
@@ -69,8 +72,6 @@ export default {};
   }
   &__subtitle {
     margin: 0  0 303px 0;
-  }
-  &__slide-control {
   }
 }
 
@@ -126,8 +127,6 @@ export default {};
 
   color: #ffffff;
   opacity: 0.8;
-}
-.slide-control {
 }
 
 // helper classes

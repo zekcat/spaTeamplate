@@ -70,9 +70,5 @@ export default {
 
     color: #252525;
   }
-
-  // .card__desc
-  &__desc {
-  }
 }
 </style>

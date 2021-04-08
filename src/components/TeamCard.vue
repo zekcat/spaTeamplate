@@ -1,7 +1,6 @@
 <template>
   <div v-for="item in teamCardArray" :key="item.id" class="card">
-    <!--  :style="{ 'background-image': item.photo }"  -->
-    <img :src="item.photo" class="card__photo" />
+      <img :src="item.photo" class="card__photo" draggable="false"/>
     <div class="card__menu">
       <div class="card__menu-background"></div>
       <div class="card__name">{{ item.name }}</div>

@@ -110,10 +110,6 @@ export default {
       border-bottom: 2px solid #252525;
     }
   }
-
-  // .content__list
-  &__list {
-  }
 }
 .list {
   display: flex;
