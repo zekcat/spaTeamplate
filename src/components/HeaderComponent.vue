@@ -1,7 +1,7 @@
 <template>
   <header class="header font-oswald">
     <picture>
-      <img src="../assets/backheader.png" class="header__background" />
+      <img :src="picked" class="header__background" />
     </picture>
 
     <div class="header__content">
@@ -25,30 +25,107 @@
       </div>
 
       <!-- TO DO slider component -->
-      <div class="header__slide-control">
-        <a href="#">01</a>
-        <a href="#">02</a>
-        <a href="#">03</a>
+      <div class="header__slide-control slide-control">
+          <input
+            name="slider"
+            id="one"
+            type="radio"
+            :value="0"
+            v-model="picked"
+            class="slide-control_hide-input"
+            :checked="picked == '0'"
+          />
+          <!-- <label for="one" class="slide-control__link">01</label> -->
+
+          <input
+            name="slider"
+            id="two"
+            type="radio"
+            :value="1"
+            v-model="picked"
+            class="slide-control_hide-input"
+            :checked="picked == '1'"
+          />
+          <!-- <label for="two" class="slide-control__link">02</label> -->
+
+          <!-- <input
+            name="slider"
+            id="three"
+            type="radio"
+            value="2"
+            v-model="picked"
+            class="slide-control_hide-input"
+          />
+          <label for="three" class="slide-control__link">03</label> -->
+
       </div>
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      mainImage: '/backheader.png',
+      imageArray: {
+        0: '/backheader.png',
+        1: '/backheader2.jpg',
+        2: '/backheader3.jpg',
+      },
+    };
+  },
+  computed: {
+    picked: {
+      get() {
+        return this.mainImage;
+      },
+      set(value) {
+        switch (value) {
+          case '0':
+            this.mainImage = this.imageArray['0'];
+            break;
+          case '1':
+            this.mainImage = this.imageArray['1'];
+            break;
+          case '2':
+            this.mainImage = this.imageArray['2'];
+            break;
+          default:
+        }
+      },
+    },
+  },
+  methods: {
+    setBack(value) {
+      switch (value) {
+        case 0:
+          this.mainImage = this.imageArray['0'];
+          break;
+        case 1:
+          this.mainImage = this.imageArray['1'];
+          break;
+        case 2:
+          this.mainImage = this.imageArray['2'];
+          break;
+        default:
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 .header {
   position: relative;
 
   &__background {
-    max-width: 1800px;
-    max-height: 904px;
+    width: 1800px;
+    height: 904px;
   }
   &__content {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
 
@@ -71,7 +148,7 @@ export default {};
     margin: 0 25px 0 0;
   }
   &__subtitle {
-    margin: 0  0 303px 0;
+    margin: 0 0 303px 0;
   }
 }
 
@@ -127,6 +204,41 @@ export default {};
 
   color: #ffffff;
   opacity: 0.8;
+}
+.slide-control {
+  display: flex;
+
+  &__link {
+    //margin: 0 4.5px;
+     z-index: 10;
+
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+
+    line-height: 27px;
+    letter-spacing: 1.152px;
+
+    color: #ffffff;
+    opacity: 0.4;
+  }
+  &_hide-input {
+    // display: none;
+    // &:checked + .slide-control__link{
+    //   font-family: Oswald;
+    //   font-style: normal;
+    //   font-weight: bold;
+    //   font-size: 36px;
+    //   line-height: 53px;
+    //   display: flex;
+    //   align-items: flex-end;
+    //   letter-spacing: 2.304px;
+
+    //   color: #ffffff;
+    //   opacity: 1;
+    // }
+  }
 }
 
 // helper classes
