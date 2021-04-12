@@ -2,6 +2,7 @@
   <section class="latest-work">
     <div class="latest-work__content content">
       <div class="content__title">Latest Works</div>
+
       <nav class="content__list list">
         <a href="" class="list__link">all</a>
         <a href="" class="list__link">web design</a>
@@ -11,22 +12,9 @@
       </nav>
     </div>
 
-    <card-teamplate
-      :image="cameraImage"
-      class="latest-work__image_first image"
-    ></card-teamplate>
-    <card-teamplate
-      :image="catImage"
-      class="latest-work__image_second image"
-    ></card-teamplate>
-    <card-teamplate
-      :image="computerImage"
-      class="latest-work__image_third image"
-    ></card-teamplate>
-    <card-teamplate
-      :image="keyboardImage"
-      class="latest-work__image_four image"
-    ></card-teamplate>
+    <div class="">
+      <card-teamplate :cards="cards"></card-teamplate>
+    </div>
   </section>
 </template>
 
@@ -43,6 +31,36 @@ export default {
       cameraImage: 'camera.png',
       computerImage: 'computer.png',
       keyboardImage: 'keyboard.png',
+      cards: [
+        {
+          id: '0',
+          image: 'camera.png',
+          title: 'Photography',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          description: '100 YEARS PHOTOGRAPHY',
+        },
+        {
+          id: '1',
+          image: 'cat.png',
+          title: 'Photography',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          description: 'A KITTEN’S LIFE',
+        },
+        {
+          id: '2',
+          image: 'computer.png',
+          title: 'Photography',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          description: 'GROOVEMADE PRODUCTS FOR MAC',
+        },
+        {
+          id: '3',
+          image: 'keyboard.png',
+          title: 'Photography',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          description: 'APPLE’s LOST MAGIC',
+        },
+      ],
     };
   },
 };
@@ -51,52 +69,30 @@ export default {
 <style lang="scss" scoped>
 .latest-work {
   position: relative;
-  height: 1989px;
+
+  height: 1859px;
+  width: 1173px;
+
   // .latest-work__content
   &__content {
     position: absolute;
-    top: 204px;
-    left: 315px;
-  }
 
-  // .latest-work__image
-  &__image {
-
-    &_first {
-      top: 159px;
-      right: 313px;
-    }
-
-    // .latest-work__image_second
-    &_second {
-      top: 519px;
-      left: 308px;
-    }
-
-    // .latest-work__image_third
-    &_third {
-      top: 893px;
-      right: 307px;
-    }
-
-    // .latest-work__image_four
-    &_four {
-      top: 1253px;
-      left: 316px;
-    }
+    top: 80px;
+    left: 1px;
   }
 }
+
 .content {
   // .content__title
   &__title {
     margin: 0 0 50px 0;
 
-    font-family: Oswald;
-    font-style: normal;
     font-weight: bold;
     font-size: 48px;
+
     line-height: 71px;
     letter-spacing: 3.072px;
+
     text-align: left;
 
     color: #252525;
@@ -106,37 +102,39 @@ export default {
       content: "";
 
       margin: 13px 0 0 0;
+
       width: 45px;
       border-bottom: 2px solid #252525;
     }
   }
 }
+
 .list {
   display: flex;
 
   &__link {
-    margin: 0 40px 0 0;
+    margin: 0 41px 157px 0;
 
     font-family: Open Sans;
-    font-style: normal;
     font-weight: normal;
     font-size: 13px;
-    line-height: 18px;
 
     text-transform: uppercase;
     text-decoration: none;
 
+    line-height: 18px;
     letter-spacing: 0.832px;
 
     color: #252525;
 
     opacity: 0.3;
 
-    &:hover{
-        opacity: 1;
+    &:hover {
+      opacity: 1;
     }
   }
 }
+
 .image {
   position: absolute;
 }

@@ -6,9 +6,7 @@
       </div>
 
       <div class="team__gallery-wrap">
-        <team-card
-          :teamCardArray="teamCardArray"
-        ></team-card>
+        <team-card :teamCards="teamCards"></team-card>
       </div>
     </div>
   </section>
@@ -23,7 +21,7 @@ export default {
   },
   data() {
     return {
-      teamCardArray: [
+      teamCards: [
         {
           id: '0',
           name: 'Tom Jones',
@@ -58,7 +56,7 @@ export default {
 
   background: #fbfbfb;
 
-  &__wrap-content{
+  &__wrap-content {
     display: flex;
     flex-direction: column;
 
@@ -69,8 +67,6 @@ export default {
   &__title {
     margin: 129px 0 0 14px;
 
-    font-family: Oswald;
-    font-style: normal;
     font-weight: bold;
     font-size: 48px;
 
@@ -83,7 +79,7 @@ export default {
       display: block;
       content: "";
 
-      margin: 20px 0 65px 0;
+      margin: 6px 0 73px 0;
       width: 45px;
 
       border-bottom: 2px solid #252525;
