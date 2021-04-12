@@ -14,50 +14,49 @@
       </nav>
 
       <div class="header__headline headline">
-        <span>WHERE GREAT IDEAS COME TO LIFE</span>
+        <span>{{ textHeadLine }}</span>
       </div>
 
       <div class="header__subtitle">
         <span class="subtitle"
-          >Passionate creative studio helping startups grow their
-          business!</span
+          >{{textSubTitle}}</span
         >
       </div>
 
       <!-- TO DO slider component -->
       <div class="header__slide-control slide-control">
-          <input
-            name="slider"
-            id="one"
-            type="radio"
-            :value="0"
-            v-model="picked"
-            class="slide-control_hide-input"
-            :checked="picked == '0'"
-          />
-          <!-- <label for="one" class="slide-control__link">01</label> -->
+        <input
+          name="slider"
+          id="one"
+          type="radio"
+          :value="0"
+          v-model="picked"
+          class="slide-control_hide-input"
+          :checked="buttonIsChecked === '0'"
+        />
+        <label for="one" class="slide-control__link">01</label>
 
-          <input
-            name="slider"
-            id="two"
-            type="radio"
-            :value="1"
-            v-model="picked"
-            class="slide-control_hide-input"
-            :checked="picked == '1'"
-          />
-          <!-- <label for="two" class="slide-control__link">02</label> -->
+        <input
+          name="slider"
+          id="two"
+          type="radio"
+          :value="1"
+          v-model="picked"
+          class="slide-control_hide-input"
+          :checked="buttonIsChecked === '1'"
+        />
+        <label for="two" class="slide-control__link">02</label>
 
-          <!-- <input
-            name="slider"
-            id="three"
-            type="radio"
-            value="2"
-            v-model="picked"
-            class="slide-control_hide-input"
-          />
-          <label for="three" class="slide-control__link">03</label> -->
-
+        <input
+          name="slider"
+          id="three"
+          type="radio"
+          :value="2"
+          v-model="picked"
+          class="slide-control_hide-input"
+          :checked="buttonIsChecked === '2'"
+        />
+        <label for="three" class="slide-control__link">03</label>
       </div>
     </div>
   </header>
@@ -68,10 +67,14 @@ export default {
   data() {
     return {
       mainImage: '/backheader.png',
+      textHeadLine: 'WHERE GREAT IDEAS COME TO LIFE',
+      textSubTitle:
+        'Passionate creative studio helping startups grow their business!',
+      buttonIsChecked: '0',
       imageArray: {
         0: '/backheader.png',
-        1: '/backheader2.jpg',
-        2: '/backheader3.jpg',
+        1: '/backheader1.jpg',
+        2: '/backheader4.jpg',
       },
     };
   },
@@ -81,14 +84,25 @@ export default {
         return this.mainImage;
       },
       set(value) {
+        console.log(value);
         switch (value) {
-          case '0':
+          case 0:
+            this.textHeadLine = 'WHERE GREAT IDEAS COME TO LIFE';
+            this.textSubTitle = 'Passionate creative studio helping startups grow their business!';
+            this.buttonIsChecked = '0';
             this.mainImage = this.imageArray['0'];
+            console.log('0 maked');
             break;
-          case '1':
+          case 1:
+            this.textHeadLine = 'WATCH IN FUTURE';
+            this.textSubTitle = 'Studio helping startups grow their business!';
+            this.buttonIsChecked = '1';
             this.mainImage = this.imageArray['1'];
             break;
-          case '2':
+          case 2:
+            this.textHeadLine = 'LIFE WITH NEW IDEAS';
+            this.textSubTitle = 'Passionate creative  grow their business!';
+            this.buttonIsChecked = '2';
             this.mainImage = this.imageArray['2'];
             break;
           default:
@@ -111,6 +125,9 @@ export default {
         default:
       }
     },
+  },
+  mounted() {
+    // this.picked = '0';
   },
 };
 </script>
@@ -207,10 +224,10 @@ export default {
 }
 .slide-control {
   display: flex;
+  align-items: flex-end;
 
   &__link {
-    //margin: 0 4.5px;
-     z-index: 10;
+    margin: 0 4.5px;
 
     font-family: Oswald;
     font-style: normal;
@@ -224,20 +241,22 @@ export default {
     opacity: 0.4;
   }
   &_hide-input {
-    // display: none;
-    // &:checked + .slide-control__link{
-    //   font-family: Oswald;
-    //   font-style: normal;
-    //   font-weight: bold;
-    //   font-size: 36px;
-    //   line-height: 53px;
-    //   display: flex;
-    //   align-items: flex-end;
-    //   letter-spacing: 2.304px;
+    display: none;
 
-    //   color: #ffffff;
-    //   opacity: 1;
-    // }
+    &:checked + .slide-control__link {
+      font-family: Oswald;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 53px;
+      letter-spacing: 2.304px;
+
+      color: #ffffff;
+      opacity: 1;
+
+      text-decoration: line-through;
+      text-decoration-color: #4caf50;
+    }
   }
 }
 
