@@ -17,7 +17,7 @@
 
       <div class="testimonial__rating">
         <div
-          v-for="star in starArray"
+          v-for="star in stars"
           :key="star.id"
           class="testimonial__rating_stars"
         >
@@ -32,7 +32,7 @@
 export default {
   data() {
     return {
-      starArray: [
+      stars: [
         { id: 0, icon: 'star-black.svg' },
         { id: 1, icon: 'star-black.svg' },
         { id: 2, icon: 'star-black.svg' },
@@ -59,14 +59,12 @@ export default {
   }
 
   // .testimonial__text
-
   &__text {
-    margin: 0 0 31px 0;
+    margin: 13px 0 26px 0;
 
     width: 735px;
 
     font-family: Open Sans;
-    font-style: normal;
     font-weight: 300;
     font-size: 14px;
 
@@ -78,12 +76,11 @@ export default {
 
   // .testimonial__number
   &__number {
-    margin: 0 0 29px 0;
+    margin: 0 0 26px 0;
 
     font-family: Open Sans;
-    font-style: normal;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 21px;
 
     line-height: 31px;
     letter-spacing: 0.896px;
@@ -92,11 +89,9 @@ export default {
   }
 
   // .testimonial__autor
-
   &__autor {
-    margin: 0 0 25px 0;
-    font-family: Oswald;
-    font-style: normal;
+    margin: 0 0 27px 0;
+
     font-weight: normal;
     font-size: 18px;
     line-height: 27px;
@@ -105,9 +100,9 @@ export default {
 
     &_name {
       color: #000000;
-
       text-transform: uppercase;
     }
+
     &_position {
       color: #252525;
       opacity: 0.3;
@@ -115,7 +110,6 @@ export default {
   }
 
   // .testimonial__rating
-
   &__rating {
     display: flex;
     justify-content: center;
@@ -123,26 +117,25 @@ export default {
     position: relative;
 
     &_stars {
-      width: 15px;
-      height: 15px;
+      width: 25px;
+      height: 25px;
 
       margin: 0 0 29px 0;
     }
 
-    &:after{
-        display: block;
+    &:after {
+      display: block;
 
-        position: absolute;
-        bottom: 0;
+      position: absolute;
+      bottom: 0;
 
-        content: '';
+      content: "";
 
-        border-bottom: solid 2px #D8D8D8;
+      border-bottom: solid 2px #d8d8d8;
 
-        width: 511px;
-        opacity: 0.5;
+      width: 511px;
+      opacity: 0.5;
     }
-
   }
 }
 </style>
