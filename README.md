@@ -1,5 +1,5 @@
 # spa-template
-
+without adaptive layout
 ## Project setup
 ```
 npm install
