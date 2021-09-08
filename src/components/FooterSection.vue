@@ -1,24 +1,37 @@
 <template>
   <footer class="footer">
-    <div class="footer__connection">
-      <footer-card :cardArray="cardArray"></footer-card>
+    <div class="footer__connection footer__width">
+      <footer-card :cards="cards"></footer-card>
     </div>
-    <div class="footer__social-network social-network">
+
+    <div class="footer__width social-network">
       <div class="social-network__wrap">
-        <div class="social-network__region">
+        <div class="social-network__region font-style">
           3rd Floor, Santa Monica Beach, CA, San Francisco
         </div>
-        <div class="social-network__adress">
+
+        <div class="social-network__adress font-style">
           (359) 0 123 456 789 - info@yourmail.com
         </div>
+
         <div class="social-network__wrap">
-          <a href="#" class="social-network__link_facebook"></a>
-          <a href="#" class="social-network__link_twitter"></a>
-          <a href="#" class="social-network__link_pinterest"></a>
+          <a
+            href="#"
+            class="social-network__link social-network__link_facebook"
+          ></a>
+          <a
+            href="#"
+            class="social-network__link social-network__link_twitter"
+          ></a>
+          <a
+            href="#"
+            class="social-network__link social-network__link_pinterest"
+          ></a>
         </div>
       </div>
     </div>
-    <div class="footer__copyright">
+
+    <div class="footer__copyright footer__width">
       Copyright 2016 - All Rights Reserved - Designed by JD
     </div>
   </footer>
@@ -33,7 +46,7 @@ export default {
   },
   data() {
     return {
-      cardArray: [
+      cards: [
         {
           id: 0,
           icon: 'briefcase.svg',
@@ -61,23 +74,18 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  width: 95%;
+
   background: #252525;
+
   // .footer__connection
   &__connection {
     display: flex;
-    width: 100%;
-  }
-
-  // .footer__social-network
-  &__social-network {
   }
 
   // .footer__copyright
   &__copyright {
-    width: 100%;
-
-    font-family: Oswald;
-    font-style: normal;
     font-weight: 300;
     font-size: 13px;
 
@@ -88,39 +96,66 @@ export default {
 
     mix-blend-mode: normal;
     opacity: 0.5;
+
+    margin: 12px 0 21px;
+  }
+
+  &__width {
+    width: 100%;
   }
 }
+
 .social-network {
   background: #2e2e2e;
-  // .social-network__wrap
-  &__wrap {
-  }
 
   // .social-network__region
   &__region {
+    margin: 136px 0 10px 0;
   }
 
   // .social-network__adress
   &__adress {
+    margin: 0 0 39px 0;
   }
 
   // .social-network__link
   &__link {
+    display: inline-block;
+
+    width: 32px;
+    height: 32px;
+
+    margin: 0 10.5px 82px;
+
+    background-repeat: no-repeat;
+    cursor: default;
+
     // .social-network__link_facebook
     &_facebook {
-        background: url("/mail.svg");
-        background-repeat: no-repeat;
+      background: url("/facebook.svg");
     }
 
     // .social-network__link_twitter
     &_twitter {
-        background: url("/twitter.svg");
-        background-repeat: no-repeat;
+      background: url("/twitter.svg");
     }
 
     // .social-network__link_pinterest
     &_pinterest {
+      background: url("/pinterest-logo.svg");
     }
   }
+}
+
+// helper-classes
+.font-style {
+  font-weight: 300;
+  font-size: 13px;
+
+  line-height: 19px;
+  letter-spacing: 0.832px;
+
+  color: #ffffff;
+  opacity: 0.5;
 }
 </style>

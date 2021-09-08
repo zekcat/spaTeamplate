@@ -1,21 +1,23 @@
 <template>
-  <div v-for="item in teamCardArray" :key="item.id" class="card">
-    <!--  :style="{ 'background-image': item.photo }"  -->
-    <img :src="item.photo" class="card__photo" />
+  <div v-for="item in teamCards" :key="item.id" class="card">
+    <img :src="item.photo" class="card__photo" draggable="false" />
+
     <div class="card__menu">
       <div class="card__menu-background"></div>
+
       <div class="card__name">{{ item.name }}</div>
+
       <div class="card__position">{{ item.position }}</div>
+
       <div class="card__description">{{ item.description }}</div>
     </div>
-    <div class="card__men"></div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    teamCardArray: {
+    teamCards: {
       typeof: Array,
       require: true,
     },
@@ -32,6 +34,7 @@ export default {
 
   margin: 0 14px;
   color: #000000;
+
   &__photo {
     width: 370px;
     height: 398px;
@@ -40,12 +43,10 @@ export default {
   // .card__name
   &__name {
     position: absolute;
-    margin: 19px 0 0 0;
+    margin: 13px 0 0 0;
 
     width: 100%;
 
-    font-family: Oswald;
-    font-style: normal;
     font-weight: 300;
     font-size: 18px;
 
@@ -57,10 +58,13 @@ export default {
     &::after {
       display: block;
       content: "";
+
       margin: 9px auto 6px;
+
       width: 45px;
+
       border-bottom: solid 2px #000000;
-      //visibility: hidden;
+
       opacity: 0;
       transition: opacity 0.3s linear;
     }
@@ -74,11 +78,8 @@ export default {
     width: 100%;
 
     opacity: 0;
-
     transition: bottom 0.5s, opacity 0.5s linear;
 
-    font-family: Oswald;
-    font-style: normal;
     font-weight: 300;
     font-size: 18px;
 
@@ -93,11 +94,9 @@ export default {
     width: 100%;
 
     opacity: 0;
-
     transition: bottom 0.5s, opacity 0.5s linear;
 
     font-family: Open Sans;
-    font-style: normal;
     font-weight: normal;
     font-size: 14px;
 
@@ -116,14 +115,18 @@ export default {
 
   &__menu-background {
     position: absolute;
+
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     background-color: #ffffff;
     opacity: 0.5;
+
     transition: opacity 1s;
   }
 
